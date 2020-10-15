@@ -12,11 +12,11 @@
 #container{ /*container esta dentro de page-landing que eh flex*/
     margin: auto; /*alinha em cima em baixo e as laterais*/
 
-    width: 90%; /*Limitar a 90% o tamanho */
+    width: min(85%, 112rem); /*Limitar a 90% o tamanho da linha ou a 112rem */
 }
 
 .location, h1, .visit p{ /* definindo algumas coisas para varios elementos (olhando dentro da classe visit a tag p)*/
-    height: 16vh;
+    height: 15vh;
 }
 
 .location{
@@ -31,7 +31,7 @@
     border:none;
 
     border-radius: 3rem;/*deixando redondo*/
-    display: flex;
+    display:flex; 
 
     align-items: center; /*alinhamento no eixo Y*/
 
@@ -39,7 +39,9 @@
 
     margin:auto; /*alinha no eixo X*/
 
-    transition: background .2s; /*na transicao ele demora 200ms*/
+    transition: background .4s; /*na transicao ele demora 200ms*/
+
+    animation-delay: 250ms;
 }
 
 .visit a:hover{/*somente quando o ""a" estiver no estado hover*/
@@ -55,13 +57,70 @@
 }
 
 main h1{
+    font-size: clamp(4rem, 8vw, 8.4rem); /*no minimo 4rem, funcao de 8vwm view port width, no maximo 8.4rem*/
     animation-delay: 150ms;
 }
 
 .visit p{
     animation-delay: 200ms;
+    
 }
 
-.visit a{
-    animation-delay: 250ms;
+
+/* Desktop version*/
+
+@media(min-width: 760px){ /* so vai adicionar quando o que estiver dentro dos parenteses que as regras abaixo vao ser incluidas, necessario ter a metaviewport no index*/
+
+    header{
+        display : flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #container{
+
+        padding: 5rem 2rem;
+
+        /* caminho, nao repetir, 80% no eixo X*/
+        background: url("../images/bg.svg") no-repeat 80% / clamp(30rem, 54vw, 50rem);
+
+    }
+    /*resetando estes valores para a tela de computador */
+
+    .location, h1, .visit p{ /* definindo algumas coisas para varios elementos (olhando dentro da classe visit a tag p)*/
+        height: initial;
+        text-align: initial;
+    }
+
+    .location{
+        text-align: right;
+        font-size: 2.3rem;
+        line-height:2.5rem;
+    }
+
+    main h1{
+        font-size: 8rem;
+        font-weight: bold;
+        line-height: 0.88;
+
+        margin: clamp(10%, 9vh,12%) 0 3rem; 
+        width: min(300px, 80%);
+        
+    }
+
+    .visit{
+        display:flex; 
+        justify-content: space-between;
+    }
+    
+    .visit p{
+        font-size: 2.4rem;
+        line-height: 1.4; /*separacao entre os blocos/linhas*/
+        width: clamp(20rem, 20vw, 30rem); /*minimo, funcao, maximo*/
+        
+    }
+
+    .visit a{
+        margin: initial;
+    }
 }
