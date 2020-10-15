@@ -1,0 +1,67 @@
+
+#page-landing {
+
+    background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);/* neste caso podemos inserir todos atributos do background juntos aqui ao inves de definir separadamente, o linear gradient eh um dos atributos*/
+    text-align: center;
+    min-height: 100vh;
+
+    display:flex; /* Aplicar o flex nessa caixa ira fazer com q caixas bloc internas desta serao alinhadas uns ao lado do outro*/
+
+}
+
+#container{ /*container esta dentro de page-landing que eh flex*/
+    margin: auto; /*alinha em cima em baixo e as laterais*/
+
+    width: 90%; /*Limitar a 90% o tamanho */
+}
+
+.location, h1, .visit p{ /* definindo algumas coisas para varios elementos (olhando dentro da classe visit a tag p)*/
+    height: 16vh;
+}
+
+.location{
+    margin: 1rem 0rem 0rem 0rem;
+}
+
+.visit a{
+    width: 8rem;
+    height:8rem;
+    background: #ffd666;
+
+    border:none;
+
+    border-radius: 3rem;/*deixando redondo*/
+    display: flex;
+
+    align-items: center; /*alinhamento no eixo Y*/
+
+    justify-content:center; /* alinhamento no eixo X*/
+
+    margin:auto; /*alinha no eixo X*/
+
+    transition: background .2s; /*na transicao ele demora 200ms*/
+}
+
+.visit a:hover{/*somente quando o ""a" estiver no estado hover*/
+    background: #96feff;
+}
+
+#logo{
+    animation-delay: 50ms;
+}
+
+.location{
+    animation-delay: 100ms;
+}
+
+main h1{
+    animation-delay: 150ms;
+}
+
+.visit p{
+    animation-delay: 200ms;
+}
+
+.visit a{
+    animation-delay: 250ms;
+}

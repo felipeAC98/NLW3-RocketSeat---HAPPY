@@ -1,0 +1,44 @@
+/*
+
+    A ultima definicao de css eh a que manda quando estiver alterando um mesmo objeto, perde somente para se caso estiver definido diretamente no html
+
+ */
+
+#body{ /* me referindo aquele que possui ID (#) body (no caso nao existe ninguem) */
+    color: #333a33;
+}
+
+*{/* Seletor universal*/
+    margin : 0;
+    padding: 0;
+}
+
+body{
+
+    height: 100vh; /* Divide a tela em 100 pedacos e expande eles  para ocupar toda a tela */
+    color: white; /* definindo a cor da fonte padrao dentro do body*/
+
+    /* no-repeat; nao repetir o background*/ 
+}
+
+:root{
+    font-size: 62.5%; /* 100% eh 16px */
+}
+
+body, input,button, textarea{ /*inserindo todas estas informacoes para estes mesmos elementos */
+
+    /*font: 400 1.8rem/1 "Nunito", sans-serif;*/
+
+    font-size: 1.8rem;  
+    line-height: 1;
+    font-weight: 400;
+    font-family: "Nunito", sans-serif; /* Caso nao localize a Nunito, faz uso da sans serif*/
+
+    /* As linhas a cima podem ser feitas em uma linha so, dessa forma: font: 400 18px/1 'Nunito', sans-serif; */
+
+    /* o "em" eh algo proporcional o elemento PAI deste
+       o "rem" proporrcional ao definido por nos no :root
+    */
+    
+    
+}
