@@ -11,6 +11,8 @@
 *{/* Seletor universal*/
     margin : 0;
     padding: 0;
+
+    box-sizing: border-box; /*para o clamp usar o padding para fazer o calculo ao inves de ignoralo*/
 }
 
 body{
