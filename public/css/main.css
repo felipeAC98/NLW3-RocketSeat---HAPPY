@@ -4,10 +4,6 @@
 
  */
 
-#body{ /* me referindo aquele que possui ID (#) body (no caso nao existe ninguem) */
-    color: #333a33;
-}
-
 *{/* Seletor universal*/
     margin : 0;
     padding: 0;
@@ -19,7 +15,7 @@ body{
 
     height: 100vh; /* Divide a tela em 100 pedacos e expande eles  para ocupar toda a tela */
     color: white; /* definindo a cor da fonte padrao dentro do body*/
-
+    background: #EBF2F5;
     /* no-repeat; nao repetir o background*/ 
 }
 

@@ -1,0 +1,230 @@
+#page-orphanage{
+    display: flex;
+    min-height:100vh;
+}
+
+aside.sidebar{
+    position: fixed; /*fixa ele em um contexto a cima, interessante notar que a laminas voltam ao lugar q estavam quando este eh habilitado*/
+    height:100%;
+    padding: 3.2rem 2.4rem;
+    background:#15C3D6;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+aside.sidebar footer button{
+
+        width: 48px;
+        height: 48px;
+        border: none;
+        background: #12AFCD;
+        border-radius: 1.6rem;
+        
+        /*alinhando o botao*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer; /*muda o jeito do cursor*/
+
+        transition: background-color 0.2s;
+}
+
+aside.sidebar footer button:hover{
+    background: #17D6EB;
+}
+
+main{
+    flex: 1;
+}
+.width-sidebar{ /*dar um espaco no main para o sidebar nao ficar em cima da imagem*/
+    padding-left: 11rem;
+}
+
+/*orphanege details*/
+
+.orphanage-details{
+    width: 90rem;
+    margin: 6.4rem auto;/*em cima de 6.4rem e aos lados auto*/
+
+    background: white;
+    border: 1px solid #D3E2E5;
+
+    border-radius: 2rem;
+   
+    overflow: hidden;
+}
+
+.orphanage-details > img{ /*pegando a imagem que esta no primeiro nivel do definido no html, um mesmo nivel sao imagens no mesmo div*/
+    width: 100%;
+    height: 30rem;
+    object-fit: cover; /*aumenta proporcionalmente para a imagem nao ficar esticada*/
+
+}
+
+.images{ /*imagens menores*/
+    display: grid;/* tipo um flex porem mais dinamico, lembrando que ele atua nos elementos que estiverem dentro dessa div*/
+    grid-template-columns: repeat(6, 1fr); /*6 eh o numero de elementos do grid, 1 fracao para cada um*/
+    column-gap: 1rem;/*espaco entre elementos*/
+    margin:1.6rem 4rem;
+}
+
+.images button{
+    border: 0; /*tirando borda e background padroes do botao*/
+    background: none;
+
+    height: 8.8rem;
+    cursor:pointer;
+    border-radius:2rem;
+
+    overflow: hidden; /*nao deixar que os conteudos dentro dessa caixem nao saiam (serao cortados nos limites da caixa)*/
+
+    opacity: 0.6;
+
+    transition: opacity 200ms;
+}
+
+.images button:hover,
+.images button.active{ /*o botao que estiver com a classe active tambem ficarao sem opacity*/
+    opacity: 1;
+}
+
+.images button img{
+    width:100%;/*utilizando 100% do espaco do botao*/ 
+    height: 8.8rem;
+    object-fit: cover; /*nao deixando imagem ficar esticada*/
+}
+
+
+.orphanage-details-content{
+    padding:8rem;
+
+}
+
+.orphanage-details-content h1{
+    color: #4D6F80;
+    font-size: 5.4rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+
+}
+
+.orphanage-details-content p{
+    line-height: 1.8rem;
+    color: #5C8599;
+    margin-top: 2.4rem;
+}
+
+.map-container{
+    margin-top: 6.4rem;
+    background: #e6f7eb;
+
+    border: 1px solid #b3dae2;
+    border-radius: 2rem;
+}
+
+#mapid{ /*aqui definimos o tamanho do bloco do mapa*/
+    width: 100%;
+    height: 28rem; /*definido aqui a altura do mapa*/
+}
+
+.map-container footer{
+    padding: 2rem;
+    text-align:center;
+}
+
+.map-container footer a{ /*ver rotas no google map*/
+    color: #0089a5;
+    text-decoration: none;
+
+}
+
+.map-container .leaflet-container{ /*borda embaixo do mapa*/
+    border-bottom: 1px solid #dde3f0;
+    border-radius: 2rem;
+}
+
+.orphanage-details-content hr{ 
+    width: 100%;
+    height: 1px;
+
+    border: 0;
+
+    background: #D3e2e6;
+
+    margin: 6.4rem 0; /*dar um espaco entre os elementos de cima e de baixo*/
+}
+
+.orphanage-details-content h2{
+    font-size: 3.6rem;
+    line-height: 1.5rem;
+    color: #4d6f80;
+    
+}
+
+.open-details{
+    margin-top: 2.4rem;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;/*seria o mesmo de fazer repeat(2, 1fr)*/
+
+    column-gap: 2rem;/*separando os elementos da coluna*/  
+}
+
+.open-details div{
+    padding: 3.2rem 2.4rem;
+
+}
+
+.open-details .hour{
+    background: linear-gradient(149.97deg, #E6F7FB 8.13%, #FFFFFF 92.67%);
+    border: 1px solid #B3DAE2;
+    border-radius: 20px;
+    color: #5C8599;
+}
+
+.open-details .open-on-weekends{
+    background: linear-gradient(154.16deg, #EDFFF6 7.85%, #FFFFFF 91.03%);
+    border: 1px solid #A1E9C5;
+    border-radius: 20px;
+    color: #37C77F;
+}
+
+.open-details img{
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.primary-button{
+    margin-top: 2.4rem;
+    width: 100%;
+    height: 6.4rem;
+    border: 0;
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    background: #3cdc8c;
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color .2s;
+}
+
+.primary-button:hover{
+    background: #36cf82;
+}
+
+.primary-button img{
+    margin-right:1.6rem;
+}
