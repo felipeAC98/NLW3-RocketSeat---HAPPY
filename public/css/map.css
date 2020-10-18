@@ -1,0 +1,29 @@
+.map-container{
+    margin-top: 6.4rem;
+    background: #e6f7eb;
+
+    border: 1px solid #b3dae2;
+    border-radius: 2rem;
+}
+
+#mapid{ /*aqui definimos o tamanho do bloco do mapa*/
+    width: 100%;
+    height: 28rem; /*definido aqui a altura do mapa*/
+}
+
+.map-container footer{
+    padding: 2rem;
+    text-align:center;
+    font-weight: 700;
+}
+
+.map-container footer a{ /*ver rotas no google map*/
+    color: #0089a5;
+    text-decoration: none;
+
+}
+
+.map-container .leaflet-container{ /*borda embaixo do mapa*/
+    border-bottom: 1px solid #dde3f0;
+    border-radius: 2rem;
+}

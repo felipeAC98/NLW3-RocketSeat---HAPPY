@@ -54,6 +54,5 @@ function selectImage(event){
     imageContainer.src= image.src;
 
     //Adicionar a classe .active para o botao que possui a imagem clicada
-
     button.classList.add("active");
 }
