@@ -47,6 +47,15 @@
 
         <div id="mapid" class="animate-appear"> </div>
 
+        <div class="orphanages"> <!-- Recebendo os dados enviados pelo fakedata.js -->
+            {{#each orphanages}} <!-- Repetindo para todos objetos orphanages o codigo abaixo-->
+
+                <span hidden data-id="{{this.id}}" data-name="{{this.name}}" data-lat="{{this.lat}}" data-lng="{{this.lng}}">
+                </span>
+
+            {{/each}}<!-- Finalizacao da repeticao-->
+        </div>
+
         <a href="/create-orphanage" class="create-orphanage" title="Cadastre um orfanato">
             <img src="/images/plus.svg" alt="Criar orfanato">
         </a>

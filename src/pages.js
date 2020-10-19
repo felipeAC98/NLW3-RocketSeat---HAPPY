@@ -1,3 +1,6 @@
+const orphanages = require('./database/fakedata.js') //puxando o arquivo
+
+//definindo os requests e reponses
 module.exports={
 
     index(req, res){
@@ -9,7 +12,7 @@ module.exports={
     },
 
     orphanages(req, res){
-        return res.render('orphanages')
+        return res.render('orphanages',{orphanages})//passando alguns dados do backend para o frontend
     },
 
     createOrphanage(req, res){
