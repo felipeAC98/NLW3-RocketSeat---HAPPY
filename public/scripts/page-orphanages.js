@@ -8,7 +8,7 @@ L.tileLayer(
 //Create icon 
 
 const icon = L.icon({
-    iconUrl:"./public/images/map-marker.svg",
+    iconUrl:"/images/map-marker.svg",
     iconSize: [58,68],
     iconAnchor:[29,68],
     popupAnchor:[170,2]
@@ -21,7 +21,7 @@ const popup = L.popup({ //Criando o balaozinho com o nome do lugar e a flechina 
     className: 'map-popup',
     minWidth: 200,
     minHeight:240
-}).setContent('Lar das meninas <a href="orphanage.html?id=1" class="choose-orphanage"> <img src="./public/images/arrow-white.svg" </a>')
+}).setContent('Lar das meninas <a href="orphanage?id=1" class="choose-orphanage"> <img src="/images/arrow-white.svg" </a>')
 
 //Create and add marker
 L.marker([-20.8070905,-49.4014284],{icon: icon}).addTo(map)
