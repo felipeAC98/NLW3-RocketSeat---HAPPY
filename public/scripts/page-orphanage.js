@@ -7,8 +7,11 @@ const options ={
     zoomControl: false
 }
 
+//Get lat and lng
+const orphanageSpan = document.querySelector('.map-container span')
+
 //Create map
-const map = L.map('mapid',options).setView([-20.8070905,-49.4014284], 13); /*a funcao map retorna um objeto que possui a funcao setView*/
+const map = L.map('mapid',options).setView([orphanageSpan.dataset.lat,orphanageSpan.dataset.lng], 13); /*a funcao map retorna um objeto que possui a funcao setView*/
 
 //Create and add tile Layer
 L.tileLayer(
@@ -25,7 +28,7 @@ const icon = L.icon({
 })
 
 //Create and add marker
-L.marker([-20.8070905,-49.4014284],{icon: icon}).addTo(map);
+L.marker([orphanageSpan.dataset.lat,orphanageSpan.dataset.lng],{icon: icon}).addTo(map);
 
 /*image gallery*/
 

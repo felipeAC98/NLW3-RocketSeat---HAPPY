@@ -98,3 +98,16 @@ function toggleSelect(event){
 
     input.value=button.dataset.value; //passando o valor do data-value para o input hidden
 }
+
+function validate(event){
+    //Validar se lat e lng estao preenchidos
+
+    const lat=document.querySelector('[name=lat]').value
+    const lng=document.querySelector('[name=lng]').value
+
+    if(lat===''){
+        event.preventDefault() //evita que o formulario seja enviado
+        alert('Favor selecionar localizacao no mapa')
+    }
+
+}

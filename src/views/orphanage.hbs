@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Para se adaptar a telas menores -->
-    <title>Lar das meninas| Happy</title>
+    <title>{{ orphanage.name}}| Happy</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -51,47 +51,30 @@
 
             <div class="orphanage-details">
 
-                <img src="/images/home.jpg" alt="Lar das meninas">
+                <img src="{{orphanage.firstImage}}" alt="{{orphanage.name}}">
 
                 <div class="images">
 
+                    {{#each orphanage.images}}
                     <button onclick="selectImage(event);" class="active" type="button">
-                        <img src="https://source.unsplash.com/random?id=1" alt="Lar das meninas">
+                        <img src="{{this}}" alt="{{orphanage.name}}"> <!-- Precisa ser this pois eh o resultado do contador da repeticao, no caso sera cada elemento do array orphanage.images -->
                     </button>
 
-                    <button onclick="selectImage(event);" type="button">
-                        <img src="https://source.unsplash.com/random?id=2" alt="Lar das meninas">
-                    </button>
-
-                    <button onclick="selectImage(event);" type="button">
-                        <img src="https://source.unsplash.com/random?id=3" alt="Lar das meninas">
-                    </button>
-
-                    <button onclick="selectImage(event);" type="button">
-                        <img src="https://source.unsplash.com/random?id=4" alt="Lar das meninas">
-                    </button>
-
-                    <button onclick="selectImage(event);" type="button">
-                        <img src="https://source.unsplash.com/random?id=5" alt="Lar das meninas">
-                    </button>
-
-                    <button onclick="selectImage(event);" type="button">
-                        <img src="https://source.unsplash.com/random?id=6" alt="Lar das meninas">
-                    </button>
+                    {{/each}}
 
                 </div>
 
                 <div class="orphanage-details-content">
 
-                    <h1>Lar das meninas</h1>
+                    <h1>{{orphanage.name}}</h1>
 
-                    <p>Presta assistência a crianças de 06 a 15 anos que se encontre em situação de risco e/ou vulnerabilidade social.</p>
+                    <p>{{orphanage.about}}</p>
                     
                     <div class="map-container">
                         <div id="mapid"></div>
-                
+                        <span data-lat="{{orphanage.lat}}" data-lng="{{orphanage.lng}}"></span>
                         <footer>
-                            <a href="" >Ver rotas no Google Maps</a>
+                            <a target="_blank" href="https://maps.google.com/mobile?q={{orphanage.lat}},{{orphanage.lng}}&z=15" >Ver rotas no Google Maps</a>
                         </footer>
                     
                     </div>
@@ -99,29 +82,40 @@
                     <hr>
 
                     <h2>
-                        Instruções para visita
+                        Informações para visita
                     </h2>
                     
-                    <p>Venha como se sentir a vontade e traga muito amor e paciência para dar.</p>
+                    <p>{{orphanage.instructions}}</p>
 
                     <div class="open-details">
 
                         <div class="hour">
                             <img src="/images/clock.svg" alt="Horarios">
-                            Horário de visitas Das 18h até 8h
+                            {{orphanage.opening_hours}}
                         </div>
 
-                        <div class="open-on-weekends">
-                            <img src="/images/info.svg" alt="Informaçoes">
-                            Atendemos fim de semana
-                        </div>
+                        {{#if orphanage.open_on_weekends}}      
+                            <div class="open-on-weekends open">
+                                <img src="/images/info.svg" alt="Informaçoes">
+                                Atendemos fim de semana
+                                
+                            </div>
 
+                        {{else}}
+
+                            <div class="open-on-weekends closed">
+                                <img src="/images/info-red.svg" alt="Informaçoes">
+                                Nao atendemos fim de semana
+                                
+                            </div>
+                        {{/if }}
                     </div>
 
-                    <button class="primary-button" type="button" class>
+                    <a href="https://api.whatsapp.com/send?l=pt_BR&phone={{orphanage.whatsapp}}&text=Oi, quero conversar sobre visitas no {{orphanage.name}}"
+                        class="primary-button" type="button" class>
                         <img src="/images/whatsapp.svg" alt="Chamar no whatsapp">
                         Entrar em contato
-                    </button>
+                    </a>
                 </div>
             
             </div>

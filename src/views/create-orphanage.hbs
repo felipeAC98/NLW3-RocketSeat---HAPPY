@@ -51,7 +51,7 @@
         </aside>
         <main class="animate-appear width-sidebar">
 
-            <form action="">
+            <form action="save-orphanage" method="post" onsubmit="validate(event)"> <!-- Quando enviar o formulario, a funcao dentro de onsubmit sera chamada-->
                 <fieldset> <!-- Campos-->
                     <legend> Dados</legend>
                                             
@@ -87,7 +87,7 @@
                         <div class="images-upload" id="images">
 
                             <div class="new-upload">
-                                <input name="images" placeholder="Cole o link da foto aqui" required> <!-- Place holder eh para ficar com um texto no campo antes de digitar-->
+                                <input name="images" placeholder="Cole o link da foto aqui" required type="url"> <!-- Place holder eh para ficar com um texto no campo antes de digitar // o type url só deixa entrar url no campo-->
                                 <span onclick="deleteField(event)"><img src="/images/remove-file.svg" alt="Remover foto"></span>
                             </div>
                             
