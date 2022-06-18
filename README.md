@@ -1,5 +1,7 @@
 # NLW3-RocketSeat---HAPPY
 
+Projeto de aprendizado de aplicação web utilizando React desenvolvido durante a Next Level Week 3 (NLW3) da RocketSeat.
+
 ## Pré requisitos
 
 - Node
